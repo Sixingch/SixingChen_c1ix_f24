@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<style>
+    h1{color: rgb(255, 255, 255);
+    font: size px 200px;;font-style: italic;}
+</style>
+<body>
+  <style>
+    body {
+      background-color: rgb(0, 0, 0); 
+    }
+  </style>
+<h1>SUBWAY STATION</h1>
+<img src="assets/music.png" alt="music" style="width: 300px; height: 200px;" onclick="playAudio('audioPlayer1')">
+<audio id="audioPlayer1">
+  <source src="assets/guitar.mp3" type="audio/wav">
+</audio>
+
+  <img src="assets/talk.png" alt="talk" style="width: 150px; height: 100.2px;" onclick="playAudio('audioplayer2')">
+  <audio id="audioplayer2">
+    <source src="assets/talk.mp3" type="audio/wav">
+  </audio>
+
+    <img src="assets/train.png" alt="train" style="width: 400px; height: 300px;" onclick="playAudio('audioplayer3')">
+    <audio id="audioplayer3">
+      <source src="assets/train.mp3" type="audio/wav">
+    </audio>
+
+
+      <img src="assets/walk.png" alt="walk" style="width: 500px; height: 319px;" onclick="playAudio('audioplayer4')">
+      <audio id="audioplayer4">
+        <source src="assets/walk.mp3" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+
+      <button onclick="playAudio('audioplayer5')" style="width: 100px; height: 50px; border: 2px solid #000; background-color: #f0f0f0; border-radius: 10px; cursor: pointer;">
+        Play
+      </button>
+  
+      <audio id="audioplayer5">
+        <source src="assets/play in subway station.mp3" type="audio/mpeg">
+      </audio>
+  
+   
+      <script>
+        function playAudio(playerId) {
+          var audio = document.getElementById(playerId);
+          audio.play();
+        }
+      </script>
+     <button style="width: 100px; height: 50px; border: 2px solid #000; background-color: #f0f0f0; border-radius: 10px; cursor: pointer;">
+      Back
+    </button>
+    <button style="width: 100px; height: 50px; border: 2px solid #000; background-color: #f0f0f0; border-radius: 10px; cursor: pointer;">
+      Next
+    </button>
+</body>
+</html>

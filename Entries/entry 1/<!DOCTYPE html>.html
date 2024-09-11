@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Image Buttons to Play Audio</title>
+</head>
+<body>
+
+<!-- 图片1 -->
+<img src="image1.jpg" alt="Play Audio 1" style="width:200px; height:200px;" onclick="playAudio('audioPlayer1')">
+<!-- 音频1 -->
+<audio id="audioPlayer1">
+  <source src="audio1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- 图片2 -->
+<img src="image2.jpg" alt="Play Audio 2" style="width:200px; height:200px;" onclick="playAudio('audioPlayer2')">
+<!-- 音频2 -->
+<audio id="audioPlayer2">
+  <source src="audio2.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- JavaScript -->
+<script>
+  function playAudio(playerId) {
+    var audio = document.getElementById(playerId);
+    audio.play();
+  }
+</script>
+
+</body>
+</html>
