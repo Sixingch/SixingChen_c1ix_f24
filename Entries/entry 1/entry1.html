@@ -3,44 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/Users/chensixing/Desktop/sixing_f24/Entries/entry 1/assets/entry 1.css">
     <title>Hello</title>
 </head>
-<style>
-    h1{color: rgb(255, 255, 255);
-    font: size px 200px;;font-style: italic;}
-</style>
+
 <body>
-  <style>
-    body {
-      background-color: rgb(0, 0, 0); 
-    }
-  </style>
-<h1>SUBWAY STATION</h1>
-<img src="assets/music.png" alt="music" style="width: 300px; height: 200px;" onclick="playAudio('audioPlayer1')">
+<h1 class="a">Subway, People Walk, People Talk, Music</a></h1>
+<img src="assets/music.png" alt="music" style="width: 600px; height: 400px;" class="leftdown" onclick="playAudio('audioPlayer1')">
 <audio id="audioPlayer1">
   <source src="assets/guitar.mp3" type="audio/wav">
 </audio>
 
-  <img src="assets/talk.png" alt="talk" style="width: 150px; height: 100.2px;" onclick="playAudio('audioplayer2')">
+  <img src="assets/talk.png" alt="talk" style="width: 300px; height: 200.4px;" class="center" onclick="playAudio('audioplayer2')">
   <audio id="audioplayer2">
     <source src="assets/talk.mp3" type="audio/wav">
   </audio>
 
-    <img src="assets/train.png" alt="train" style="width: 400px; height: 300px;" onclick="playAudio('audioplayer3')">
+    <img src="assets/train.png" alt="train" style="width: 960px; height: 720px;" class="leftup" onclick="playAudio('audioplayer3')">
     <audio id="audioplayer3">
       <source src="assets/train.mp3" type="audio/wav">
     </audio>
 
 
-      <img src="assets/walk.png" alt="walk" style="width: 500px; height: 319px;" onclick="playAudio('audioplayer4')">
-      <audio id="audioplayer4">
+      <img src="assets/walk.png" alt="walk" style="width: 500px; height: 319px;" class="rightdown" onclick="playAudio('audioplayer4')">
+      Play <audio id="audioplayer4">
         <source src="assets/walk.mp3" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
 
-      <button onclick="playAudio('audioplayer5')" style="width: 100px; height: 50px; border: 2px solid #000; background-color: #f0f0f0; border-radius: 10px; cursor: pointer;">
-        Play
-      </button>
+      <button onclick="playAudio('audioplayer5')" class="playbutton" class="playbuttonposition">Play  </button>
   
       <audio id="audioplayer5">
         <source src="assets/play in subway station.mp3" type="audio/mpeg">
@@ -53,11 +44,7 @@
           audio.play();
         }
       </script>
-     <button style="width: 100px; height: 50px; border: 2px solid #000; background-color: #f0f0f0; border-radius: 10px; cursor: pointer;">
-      Back
-    </button>
-    <button style="width: 100px; height: 50px; border: 2px solid #000; background-color: #f0f0f0; border-radius: 10px; cursor: pointer;">
-      Next
-    </button>
+<button class="button1" >Back</button>
+<button class="button2" >Next</button>
 </body>
 </html>

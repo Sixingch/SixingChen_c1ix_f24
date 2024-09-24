@@ -1,7 +1,20 @@
-body{background-color:blue;}
+body{background-color:blue;
+}
 
 h1{
 font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 color: aliceblue;
 font-size: 100px;
+padding: 100px 50px 100px;
+text-align: center;
+border: 10px white double;
 }
+
+p{
+ color: antiquewhite; font-family: monospace;
+}
+
+.damn{
+    font-size: 100px;
+}
+
