@@ -26,6 +26,7 @@
   margin: 30px;
   height: 130px; 
   background-color: transparent;   
+  
 }
 .container-item {
     background-color: transparent;
@@ -39,7 +40,8 @@
     height: 390px;
     }
 .container-item:hover{
-  color: rgb(226, 203, 0);
+  color: rgb(0, 0, 0);
+  transform: scale(1.1)
 }
 
 body {

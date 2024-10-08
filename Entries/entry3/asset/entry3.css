@@ -4,26 +4,54 @@ body{background-color: black;}
 
 
 .container{
-    display: flex;
-    margin: 40px;
-      justify-content: space-around;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap; 
 }
 
 .container-item {
-   
-    background-color: transparent;
-    color: rgb(255, 255, 255);
+  background: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 10px;
-    width: 70px;
-    height: 300px;
-    line-height: 70px; 
-    border-radius: 10px;
-    
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    animation: titleColorChange 3s infinite;
+    opacity: 0.9;
+    transition: transform 0.3s background-color 0.3s；
+    }
+
+.container-item:hover{
+  color: rgb(255, 255, 255);
+  transform: scale(1.1) rotate(360deg);
+  animation: vinylcolorChange 1s infinite;
 }
+
+@keyframes vinylcolorChange {
+  0% { 
+      background: linear-gradient(0deg, rgb(26, 233, 195), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211)); 
+  }
+  20% { 
+      background: linear-gradient(0deg, rgb(161, 105, 1), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0)); 
+  }
+  40% { 
+      background: linear-gradient(0deg, rgb(128, 128, 1), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0)); 
+  }
+  60% { 
+      background: linear-gradient(0deg, rgb(2, 123, 2), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0)); 
+  }
+  80% { 
+      background: linear-gradient(0deg, rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0)); 
+  }
+  100% { 
+      background: linear-gradient(0deg, rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255)); 
+  }
+}
+
 
 .button1{
     width: 100px;
