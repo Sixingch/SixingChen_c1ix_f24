@@ -1,12 +1,70 @@
 
 body{
 background-color: black;
+margin: 0;
+padding: 0;
+height: 100%;
+overflow: hidden;
 }
-
-
 
 .map{
-
-    align-self: center;
-    justify-content: center;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
 }
+
+.red-point {
+    width: 30px; 
+    height: 30px; 
+    background-color: red; 
+    border-radius: 50%;
+    position: absolute; 
+    top: 20%; 
+    left: 58%; 
+    transform: translate(-50%, -50%);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0; 
+    }
+}
+
+.shining-text {
+    position: absolute; 
+    top: 50%; 
+    left: calc(50% + 30px); 
+    color: rgb(255, 255, 255); 
+    font-size: 24px; 
+    transform: translateY(-50%); 
+    animation: blink 2s infinite;
+    position: absolute; 
+    top: 20%; 
+    left: 63%; 
+    transform: translate(-50%, -50%);
+}
+
+
+.button1{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    font-size:20px; 
+    color: rgb(255, 255, 255);
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+  }
+  .button2{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    font-size:20px; 
+    color: rgb(255, 255, 255);
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+  }
