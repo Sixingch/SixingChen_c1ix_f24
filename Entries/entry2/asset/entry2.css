@@ -1,23 +1,4 @@
 
-.button1{
-  width: 100px;
-  height: 40px;
-  background-color: transparent;
-  font-size:20px; 
-  color: rgb(193, 114, 3);
-  font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border: none;
-}
-.button2{
-  width: 100px;
-  height: 40px;
-  background-color: transparent;
-  font-size:20px; 
-  color: rgb(193, 114, 3);
-  font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border: none;
-}
-
 .container {
   display: flex; 
   flex-direction: row; 
@@ -45,6 +26,7 @@
 }
 
 body {
+  background-color: black;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -102,4 +84,45 @@ body {
 .e {height: 390px;
   width:195px;}
 
-
+  .top-nav {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000;  
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item.active a {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000; 
+  }
+  
+  .nav-item a:hover {
+    color: #000; 
+  }
+  
+  

@@ -1,11 +1,14 @@
-body{background-color: black;}
+body{ background-color: black;
+  margin: 0;
+  height: 100%;
+}
 
 
 
 
 .container{
   display: flex;
-  margin: 30px;
+  margin: 100px 30px 30px 30px; 
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap; 
@@ -51,23 +54,76 @@ body{background-color: black;}
       background: linear-gradient(0deg, rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255)); 
   }
 }
-
-
-.button1{
-    width: 100px;
-    height: 40px;
-    background-color: transparent;
-    font-size:20px; 
-    color: rgb(255, 255, 255);
-    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: none;
+  @media (max-width: 768px) {
+    body {
+      background-color: white;
+    }
+    .container-item {
+      background: white;
+        color: rgb(0, 0, 0);
+        text-align: center; 
+        justify-content: space-between;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 10px;
+        height: 250px;
+        width: 250px;
+      }
+    
+    .container-item:hover{
+      color: rgb(255, 255, 255);
+      transform: scale(1.5) rotate(360deg);
+      position: relative;
+      z-index: 1;
+      background: black;
+      animation: vinylcolorChange 2s infinite;
+    }
+    @keyframes vinylcolorChange {
+      100% { 
+          background: linear-gradient(0deg, rgb(192, 0, 0), rgb(148, 0, 0), rgb(0, 0, 0), rgb(139, 0, 0)); 
+      }
+     }
   }
-  .button2{
-    width: 100px;
-    height: 40px;
-    background-color: transparent;
-    font-size:20px; 
-    color: rgb(255, 255, 255);
-    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: none;
+
+  .top-nav {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000;  
+    display: flex;
+    font-family: Arial, sans-serif;
   }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item.active a {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000; 
+  }
+  
+  .nav-item a:hover {
+    color: #000; 
+  }
+  
+  
+
