@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="asset/entry5.css">
+    <link rel="icon" type="image/png" href="asset/Favicon.png">
 </head>
 <body>
+    <h1 class="main-title">SOUNDS OF HARBOR</h1>
+
     <div class="top-nav">
         <ul class="nav-links">
             <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
@@ -15,11 +18,65 @@
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">PLAZA</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
         </ul>
     </div>
 
     <video autoplay muted loop class="video-background">
         <source src="asset/river.mp4" type="video/mp4">
       </video>
+
+      <div class="video-container">
+        <video autoplay muted loop class="square-video">
+            <source src="asset/Birds.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="square-video">
+            <source src="asset/river.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="square-video">
+            <source src="asset/river.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="square-video">
+            <source src="asset/Birds.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="square-video">
+            <source src="asset/river.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="square-video">
+            <source src="asset/Birds.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const videos = document.querySelectorAll('.square-video');
+    
+            videos.forEach(video => {
+            
+                video.addEventListener('mouseenter', () => {
+                    
+                    videos.forEach(v => {
+                        if (v !== video) {
+                            v.classList.add('transparent');
+                        }
+                    });
+    
+                   
+                    video.muted = false;
+                    video.play();
+                });
+    
+              
+                video.addEventListener('mouseleave', () => {
+                   
+                    videos.forEach(v => v.classList.remove('transparent'));
+    
+                   
+                    video.muted = true;
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>

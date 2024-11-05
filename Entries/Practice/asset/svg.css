@@ -1,0 +1,41 @@
+
+
+body {
+  background-color: pink;
+  font-family: arial;
+  color: red;
+  font-size: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.item {
+  text-align: center;
+}
+
+#Layer_1 {
+  height: 500px;
+}
+
+@keyframes Layer_1Spin {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+  0%{opacity: 1}
+  50%{opacity: 0.1;}
+  100%(opacity:1)
+}
+
+#Layer_1 {
+  animation: Layer_1Spin 5s ease-out infinite;
+  height:500px;
+}

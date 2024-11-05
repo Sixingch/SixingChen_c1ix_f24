@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/entry6.css">
+    <link rel="icon" type="image/png" href="asset/Favicon.png">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="main-title">SOUNDS OF K-TOWN</h1>
+
+    <div class="top-nav">
+        <ul class="nav-links">
+            <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">PLAZA</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
+        </ul>
+    </div>
+   
+    <div class="video-container">
+        <video class="video-item" muted loop>
+            <source src="asset/bbq.mp4" type="video/mp4">
+    
+        </video>
+        <video class="video-item" muted loop>
+            <source src="asset/bbq.mp4" type="video/mp4">
+
+        </video>
+        <video class="video-item" muted loop>
+            <source src="asset/bbq.mp4" type="video/mp4">
+ 
+        </video>
+   
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const videos = document.querySelectorAll('.video-item');
+        
+                videos.forEach(video => {
+
+                    video.addEventListener('mouseenter', () => {
+                        videos.forEach(v => {
+                            if (v !== video) {
+                                v.classList.add('transparent'); 
+                                v.muted = true;  
+                                v.pause();  
+                            }
+                        });
+                        video.classList.remove('transparent');  
+                        video.muted = false;  
+                        video.play();  
+                    });
+        
+                  
+                    video.addEventListener('mouseleave', () => {
+                        videos.forEach(v => {
+                            v.classList.remove('transparent'); 
+                            v.muted = true; 
+                        });
+                        video.pause();  
+                    });
+                });
+            });
+        </script>
+        
+        
+        
+    
+</body>

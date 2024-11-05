@@ -3,8 +3,19 @@ body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
+
+    .main-title {
+        color: #b1d0ff;  
+        text-align:start; 
+        font-size: 40px; 
+        margin-top: 50px;  
+        margin-left: 19px;
+        z-index: 1;
+        position:absolute;  
+    }
+
     .video-background {
       position: fixed;
       top: 0;
@@ -14,11 +25,50 @@ body {
       object-fit: cover;
       z-index: -1; 
     }
+  
+    .video-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  
+        gap: 15px; 
+        position: relative;
+        z-index: 1;  
+        padding: 110px;
+        justify-items: center; 
+        align-items: center; 
+        transition: all 0.3s ease;
+    }
+    
+    .square-video {
+        width: 600px;  
+        height: 400px;  
+        object-fit: cover;
+        border: 1px solid #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .square-video.transparent {
+        opacity: 0.3;  
+    }
+    
+    
+   
+    .square-video:nth-child(odd) {
+        transform: translateY(20px);  
+    }
+    
+    .square-video:nth-child(even) {
+        transform: translateY(-20px);  
+    }
+
+
+    
+    
 
 .top-nav {
-    background-color: #fff;
+    background-color: transparent;
     padding: 10px 20px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 0.5px solid #b1d0ff;
 }
 
 .nav-links {
@@ -34,19 +84,25 @@ body {
 
 .nav-item a {
     text-decoration: none;
-    color: #555;
+    color: #b1d0ff;
     font-size: 14px;
-    transition: color 0.3s ease;
+    display: inline-block;
+    transition:transform 0.3s ease, color 0.3s ease;
 }
 
 .nav-item.active a {
-    color: #000;
+    color: #60a3fa;
     font-weight: bold;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px dashed #a1befb;
+    
 }
 
 .nav-item a:hover {
-    color: #000;
+    transform: scale(1.2); 
+    color: #ffffff;
 }
+
+
+
 
 
