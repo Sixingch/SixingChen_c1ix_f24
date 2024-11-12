@@ -1,10 +1,21 @@
 
+.main-title {
+  color: #ffffff;  
+  text-align:start; 
+  font-size: 40px; 
+  margin-top: 50px;  
+  margin-left: 19px;
+  z-index: 1;
+  position:absolute;  
+}
+
 .container {
   display: flex; 
   flex-direction: row; 
   justify-content: space-around; 
   align-items:baseline;
-  margin: 30px;
+  padding-top: 100px;
+
   height: 130px; 
   background-color: transparent;   
   
@@ -13,12 +24,7 @@
     background-color: transparent;
     color: rgb(255, 255, 255);
     transition: color 1s ease;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: larger;
-    text-align: center;
-    margin: 30px;
-    width: 195px;
-    height: 390px;
+    font-family:Arial, sans-serif;
     }
 .container-item:hover{
   color: rgb(0, 0, 0);
@@ -26,12 +32,14 @@
 }
 
 body {
-  background-color: black;
+  
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
+    font-family: Arial, sans-serif;
   }
+
   .video-background {
     position: fixed;
     top: 0;
@@ -85,18 +93,11 @@ body {
   width:195px;}
 
   .top-nav {
-    background-color: #fff;
+    background-color: transparent;
     padding: 10px 20px;
-    border-bottom: 1px solid #e0e0e0;
-    position: fixed;  
-    top: 0;
-    left: 0;
-    width: 100%; 
-    z-index: 1000;  
-    display: flex;
-    font-family: Arial, sans-serif;
-  }
+    border-bottom: 0.5px solid rgb(255, 255, 255);
   
+  }
   .nav-links {
     list-style: none;
     display: flex;
@@ -110,19 +111,22 @@ body {
   
   .nav-item a {
     text-decoration: none;
-    color: #555;
+    color: rgb(255, 255, 255);
     font-size: 14px;
-    transition: color 0.3s ease;
+    display: inline;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
   
   .nav-item.active a {
-    color: #000;
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    border-bottom: 2px solid #000; 
+    border-bottom: 1px dashed rgb(255, 255, 255); 
   }
   
   .nav-item a:hover {
-    color: #000; 
+    color:rgb(96, 96, 96);
+    display: inline-block;
+    transform: scale(1.2);  
   }
   
   
