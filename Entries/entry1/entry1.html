@@ -9,52 +9,76 @@
 </head>
 
 <body>
-<h1 class="a">Subway, People Walk, People Talk, Music</a></h1>
-<img src="assets/music.png" alt="music" style="width: 600px; height: 400px;" class="leftdown" onclick="playAudio('audioPlayer1')">
-<audio id="audioPlayer1">
-  <source src="assets/guitar.mp3" type="audio/wav">
-</audio>
 
-  <img src="assets/talk.png" alt="talk" style="width: 300px; height: 200.4px;" class="center" onclick="playAudio('audioplayer2')">
-  <audio id="audioplayer2">
-    <source src="assets/talk.mp3" type="audio/wav">
-  </audio>
-
-    <img src="assets/train.png" alt="train" style="width: 960px; height: 720px;" class="leftup" onclick="playAudio('audioplayer3')">
-    <audio id="audioplayer3">
-      <source src="assets/train.mp3" type="audio/wav">
-    </audio>
-
-
-      <img src="assets/walk.png" alt="walk" style="width: 500px; height: 319px;" class="rightdown" onclick="playAudio('audioplayer4')">
-      Play <audio id="audioplayer4">
-        <source src="assets/walk.mp3" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-
-      <button onclick="playAudio('audioplayer5')" class="playbutton" class="playbuttonposition">Play  </button>
-  
-      <audio id="audioplayer5">
-        <source src="assets/play in subway station.mp3" type="audio/mpeg">
-      </audio>
-  
-   
-      <script>
-        function playAudio(playerId) {
-          var audio = document.getElementById(playerId);
-          audio.play();
-        }
-      </script>
+  <h1 class="main-title">SOUNDS OF SUBWAY</h1>
+  <div class="hover-text-container">
+    The first stop
+    <span class="tooltip">What type of sound do you always hear in the subway station? <br>How did they make you feel?</span>
+</div>
 
 <div class="top-nav">
   <ul class="nav-links">
-      <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">PLAZA</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
-  </ul>
+    <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
+    <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
+</ul>
 </div>
+
+<div class="video-gallery">
+  <div class="video-row center-align">
+    <div class="video-container">
+      <video class="hover-video" muted>
+          <source src="assets/music.mp4" type="video/mp4">
+      </video>
+      <span class="hover-text">Subway Musician! #$#@#%</span>
+  </div>
+  </div>
+  <div class="video-row center-align">
+    <div class="video-container">
+      <video class="hover-video" muted>
+          <source src="assets/talk .mp4" type="video/mp4">
+      </video>
+      <span class="hover-text">People Talk and Loud... :(</span>
+    </div>
+      <div class="video-container">
+      <video class="hover-video" muted>
+          <source src="assets/train.mp4" type="video/mp4">
+      </video>
+      <span class="hover-text">Train is coming ~</span>
+    </div>
+  </div>
+  <div class="video-row">
+    <div class="video-container">
+      <video class="hover-video" muted>
+          <source src="assets/walk.mp4" type="video/mp4">
+      </video>
+      <span class="hover-text">Dong dong dong</span>
+  </div>
+</div>
+</div>
+
+
+<script>
+  document.querySelectorAll('.hover-video').forEach(video => {
+      video.addEventListener('mouseenter', () => {
+          video.muted = false;
+          video.play();
+      });
+
+      video.addEventListener('mouseleave', () => {
+          video.pause();
+          video.muted = true;
+          video.currentTime = 0; 
+      });
+  });
+</script>
+
+
+
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/entry7.css">
+    <link rel="icon" type="image/png" href="asset/Favicon.png">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="main-title">FLUSHING</h1>
+
+    <div class="top-nav">
+        <ul class="nav-links">
+            <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
+        </ul>
+    </div>
+
+    <div class="gallery">
+        <div class="photo-container" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')">
+            <img src="asset/bbq.png" alt="Photo 1">
+        </div>
+        <div class="photo-container" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')">
+            <img src="asset/hotpot.png" alt="Photo 2">
+        </div>
+    </div>
+
+    <audio id="sound1" src="asset/bbq.wav"></audio>
+    <audio id="sound2" src="asset/hotpot.wav"></audio>
+
+    <script>
+        function playSound(soundId) {
+            const audioElement = document.getElementById(soundId);
+            if (audioElement) {
+                audioElement.currentTime = 0;
+                audioElement.play();
+            }
+        }
+
+        function stopSound(soundId) {
+            const audioElement = document.getElementById(soundId);
+            if (audioElement) {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
