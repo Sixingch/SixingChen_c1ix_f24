@@ -8,12 +8,24 @@
     <title>entry 2</title>
 </head>
 <body>
-    <h1 class="main-title">SOUNDS OF PARK</h1>
+    <h1 class="main-title">NYC PARK</h1>
+    <div class="hover-text-container">
+        The second stop
+        <span class="tooltip">Nestled within the vibrant pulse of New York City lies a haven of nature and sensory delight: the quintessential city park.<br>
+            Imagine the rustle of autumn leaves swirling in the wind, mingling with the playful barks echoing from the dog park nearby.<br>
+            The rhythmic gurgle of a central fountain creates a soothing counterpoint to the soft crunch of footsteps on the grass.<br>
+            These layered sounds form a symphony of the city—an urban orchestra where nature and humanity intertwine.<br>
+            In a metropolis defined by its energy,NYC parks become sanctuaries of sound, where the cacophony of the cityscape transforms<br>
+            into moments of connection and calm. This is the City of Sounds, where every park tells its own auditory story, weaving nature’s <br>melody with the rhythm of urban life.
+            Enjoy the sounds！</span>
+    </div>
+
+
     <div class="top-nav">
         <ul class="nav-links">
             <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">NYC PARK</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
@@ -23,31 +35,61 @@
         </ul>
     </div>
     
-    <video autoplay muted loop class="video-background">
-        <source src="asset/park.mp4" type="video/mp4">
-      </video>
+ 
       
-      <div class="content">
-      </div>
+  
 
     <div class="container">
-        <div class="container-item" >
-            <img class="a" src="asset/dog.png" alt="dog">
-            </div>
         <div class="container-item">
-            <img class="b"   src="asset/funtain.png" alt="funtain" >
+            <video class="hover-video" muted>
+                <source src="asset/dog.mp4" type="video/mp4">
+            </video>
+            <span class="hover-text">Playful Dog</span>
         </div>
         <div class="container-item">
-            <img class="c" src="asset/grass.png" alt="grass">
+            <video class="hover-video" muted>
+                <source src="asset/funtain.mp4" type="video/mp4">
+            </video>
+            <span class="hover-text">Fountain Splash</span>
         </div>
         <div class="container-item">
-            <img class="d" src="asset/leafs.png" alt="leafs">
+            <video class="hover-video" muted>
+                <source src="asset/grass.mp4" type="video/mp4">
+            </video>
+            <span class="hover-text">Green Grass</span>
         </div>
         <div class="container-item">
-            <img class="e"src="asset/wind.png" alt="wind">
+            <video class="hover-video" muted>
+                <source src="asset/leaf.mp4" type="video/mp4">
+            </video>
+            <span class="hover-text">Rustling Leaves</span>
+        </div>
+        <div class="container-item">
+            <video class="hover-video" muted>
+                <source src="asset/wind.mp4" type="video/mp4">
+            </video>
+            <span class="hover-text">Gentle Breeze</span>
         </div>
     </div>
+    
+    
+    
+<script>
+document.querySelectorAll('.hover-video').forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        video.muted = false;
+        video.play();
+    });
 
+    video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.muted = true;
+        video.currentTime = 0; 
+    });
+});
+
+</script>
     
 </body>
 </html>
+

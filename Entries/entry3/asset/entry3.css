@@ -3,91 +3,127 @@ body{ background-color: black;
   height: 100%;
 }
 
+.main-title {
+  color: #9eabff;  
+  text-align:start; 
+  font-size: 40px; 
+  margin-top: 50px;  
+  margin-left: 19px;
+  z-index: 1;
+  position:relative
+}
 
+.hover-text-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #9eabff;  
+  text-align:start; 
+  font-size: 15px; 
+  margin-top: 10px;  
+  margin-left: 22px;
+  z-index: 1;
+  position:absolute;  
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.tooltip {
+  visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 180%; 
+    left: 320%; 
+    transform: translateX(-50%);
+    background-color:transparent;
+    color: #9eabff;
+    padding: 0PX;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: top center;
+}
+.hover-text-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(10px);}
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 110%; 
+    left: 5%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #9eabff transparent;
+  }
 
-
-.container{
+.container {
   display: flex;
-  margin: 100px 30px 30px 30px; 
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap; 
+  gap: 30px;
+  margin-top: 280px;
+
+  background-color: black;
 }
 
 .container-item {
-  background: white;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 10px;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    animation: titleColorChange 3s infinite;
-    opacity: 0.9;
-    transition: transform 0.3s background-color 0.3s；
-    }
-
-.container-item:hover{
-  color: rgb(255, 255, 255);
-  transform: scale(1.1) rotate(360deg);
-  animation: vinylcolorChange 1s infinite;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: #9eabff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
 }
 
-@keyframes vinylcolorChange {
-  0% { 
-      background: linear-gradient(0deg, rgb(26, 233, 195), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211)); 
+.container-item:hover {
+  animation: rotateInfinite 2s linear infinite; 
+}
+
+@keyframes rotateInfinite {
+  from {
+      transform: rotate(0deg);
   }
-  20% { 
-      background: linear-gradient(0deg, rgb(161, 105, 1), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0)); 
-  }
-  40% { 
-      background: linear-gradient(0deg, rgb(128, 128, 1), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0)); 
-  }
-  60% { 
-      background: linear-gradient(0deg, rgb(2, 123, 2), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0)); 
-  }
-  80% { 
-      background: linear-gradient(0deg, rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0)); 
-  }
-  100% { 
-      background: linear-gradient(0deg, rgb(75, 0, 130), rgb(148, 0, 211), rgb(255, 0, 0), rgb(255, 165, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255)); 
+  to {
+      transform: rotate(360deg);
   }
 }
-  @media (max-width: 768px) {
-    body {
-      background-color: white;
-    }
-    .container-item {
-      background: white;
-        color: rgb(0, 0, 0);
-        text-align: center; 
-        justify-content: space-between;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        margin: 10px;
-        height: 250px;
-        width: 250px;
-      }
-    
-    .container-item:hover{
-      color: rgb(255, 255, 255);
-      transform: scale(1.5) rotate(360deg);
-      position: relative;
-      z-index: 1;
-      background: black;
-      animation: vinylcolorChange 2s infinite;
-    }
-    @keyframes vinylcolorChange {
-      100% { 
-          background: linear-gradient(0deg, rgb(192, 0, 0), rgb(148, 0, 0), rgb(0, 0, 0), rgb(139, 0, 0)); 
-      }
-     }
-  }
+
+
+.vinyl-image {
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.hover-text {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  color: white;
+  background:transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+ 
+  text-align: center;
+}
+
+.container-item:hover .hover-text {
+  opacity: 1;
+  transform: translateX(-50%) scale(1); 
+}
 
   .top-nav {
-    background-color: #fff;
+    background-color: transparent;
     padding: 10px 20px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #9eabff;
     position: fixed;  
     top: 0;
     left: 0;
@@ -110,19 +146,21 @@ body{ background-color: black;
   
   .nav-item a {
     text-decoration: none;
-    color: #555;
+    color: #9eabff;
     font-size: 14px;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
   
   .nav-item.active a {
-    color: #000;
+    color: #9eabff;
     font-weight: bold;
-    border-bottom: 2px solid #000; 
+    border-bottom: 2px dashed #9eabff; 
   }
   
   .nav-item a:hover {
-    color: #000; 
+    color: #ffffff; 
+    display: inline-block;
+    transform: scale(1.2); 
   }
   
   
