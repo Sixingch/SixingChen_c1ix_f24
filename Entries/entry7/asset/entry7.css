@@ -3,12 +3,13 @@ body {
     background-color: #000000;
     font-family: Arial, sans-serif;
     cursor:pointer;
+    cursor: url('https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/asset/fire.svg'),auto;
 }
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: all-scroll;
+  
 }
 .gallery {
     display: flex;
@@ -16,7 +17,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 300px;
-    cursor: url('https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/asset/fire.png');
 }
 .photo-container {
     position: relative;
