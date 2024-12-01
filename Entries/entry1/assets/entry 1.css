@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #000000;
   font-family: Arial, sans-serif;
-  overflow: scroll;
+
 }
 .main-title {
   color: #12b003;  
@@ -25,13 +25,26 @@ body {
   z-index: 1;
   position:absolute;  
   font-family: Georgia, 'Times New Roman', Times, serif;
+  animation: shine 0.1s infinite alternate;
+}
+@keyframes shine {
+  0% {
+      color: #12b003;
+  }
+  100% {
+      color: #ffffff; 
+  }
+}
+.hover-text-container:hover {
+  text-shadow: none; 
+  color: #ffffff; 
 }
 .tooltip {
   visibility: hidden;
     opacity: 0;
     position: absolute;
     top: 140%; 
-    left: 230%; 
+    left: 250%; 
     transform: translateX(-50%);
     background-color:transparent;
     color: #12b003;
@@ -181,6 +194,27 @@ body {
 }
 
 .video-container:hover .hover-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.hover-text2 {
+  position: fixed;
+  top:300px;
+  left:80%;
+  transform: translateX(-50%);
+  color: #12b003;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  text-align:left;
+}
+
+.video-container:hover .hover-text2 {
   opacity: 1;
   transform: translateX(-50%) translateY(-10px);
 }

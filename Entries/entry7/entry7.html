@@ -9,6 +9,23 @@
 </head>
 <body>
     <h1 class="main-title">FLUSHING</h1>
+    <div class="hover-text-container">
+    The seventh stop
+    <span class="tooltip">
+        Flushing, a vibrant neighborhood in the borough of Queens, New York,<BR>
+        is a melting pot of cultures, histories, and sounds. Known for its<BR> 
+        rich diversity, bustling streets, and culinary hotspots, Flushing is<BR> 
+        also a place where the sounds of daily life weave together to form a<BR> 
+        unique auditory landscape. From the constant hum of traffic and the<BR> 
+        rhythmic clattering of subway trains to the layered conversations in<BR> 
+        multiple languages, the soundscape of Flushing speaks to its multicultural identity.<BR> 
+        The voices of vendors, the melodies of street performers, the clinking of<BR> 
+        restaurant plates, and the occasional distant sirens create a symphony of<BR> 
+        urban life, encapsulating both the frenetic energy and communal warmth that<BR> 
+        define the neighborhood. Whether it’s the calming whispers of a temple or the<BR> 
+        frenetic buzz of a busy street corner, the sounds of Flushing offer a deeper<BR> 
+        insight into the complex layers of its community.</span>
+</div>
 
     <div class="top-nav">
         <ul class="nav-links">
@@ -25,15 +42,76 @@
 
     <div class="gallery">
         <div class="photo-container" onmouseover="playSound('sound1')" onmouseout="stopSound('sound1')">
-            <img src="asset/bbq.png" alt="Photo 1">
+            <img id="1" src="asset/bbq.png" alt="Photo 1"> 
+            <span class="hover-text">SHAKAO</span>
+            <span class="hover-text2">SHAOKAO(Chinese BBQ) features skewered meats,<br>
+                like pork or chicken, marinated in a blend of spices<br>
+                and grilled over an open flame. Known for its smoky<br>
+                aroma and tender, flavorful meat, it’s a beloved street<br> 
+                food and dining tradition in Chinese cuisine.</span>
         </div>
         <div class="photo-container" onmouseover="playSound('sound2')" onmouseout="stopSound('sound2')">
-            <img src="asset/hotpot.png" alt="Photo 2">
+            <img  src="asset/hotpot.png" alt="Photo 2">
+            <span class="hover-text">SICHUAN HOTPOT</span>
+            <span class="hover-text2">
+                Sichuan hotpot is a fiery and flavorful culinary experience<br>
+                that originates from the Sichuan province of China. Known for<br>
+                its bold, spicy broth infused with Sichuan peppercorns, chili<br>
+                peppers, and aromatic herbs, it offers a unique balance of heat<br> 
+                and numbing sensations. Diners cook various ingredients like meats,<br> 
+                vegetables, and tofu in the bubbling broth, creating a communal<br> 
+                and interactive meal. The intense flavors and lively atmosphere<br> 
+                make Sichuan hotpot a beloved tradition for those seeking a spicy,<br>
+                savory adventure.</span>
         </div>
+            <div class="photo-container" onmouseover="playSound('sound3')" onmouseout="stopSound('sound3')">
+                <img src="asset/milktea.png" alt="Photo 3">
+                <span class="hover-text">MILKTEA</span>
+                <span class="hover-text2">
+                    The origin of milk tea is commonly traced to Taiwan in the 1980s,<br> 
+                    where it first became popular in the form of bubble tea (also known as boba tea).<br>
+                    The drink was created by combining sweetened tea with milk and adding chewy<br> 
+                    tapioca pearls. The iconic bubble tea became a sensation in Taiwan and quickly<br> 
+                    spread to other parts of Asia and the world.<br>
+                    However, the concept of milk tea itself predates bubble tea and can be found<br> 
+                    in various cultures. For example, in Hong Kong, the "Hong Kong-style milk tea"<br> 
+                    has been a staple since the 1950s, made with strong black tea and evaporated or<br> 
+                    condensed milk. Similarly, in mainland China, milk tea is enjoyed in different<br> 
+                    regional forms, often combining traditional tea with milk for a smoother, richer flavor.</span>
+            </div>
+            <div class="photo-container" onmouseover="playSound('sound4')" onmouseout="stopSound('sound4')">
+                <img  src="asset/erhu.png" alt="Photo 4">
+                <span class="hover-text">ERHU~</span>
+                <span class="hover-text2">
+                    The erhu is a traditional Chinese stringed instrument, often referred to as the<br>  
+                    "Chinese violin." It consists of two strings, typically tuned a fifth apart, and<br>  
+                    is played with a bow that is placed between the strings. The erhu's distinct,<br>  
+                    expressive sound is produced by drawing the bow across the strings while pressing<br> 
+                    them with the fingers on the fingerboard. With its melancholic, yet deeply emotional<br>  
+                    tone, the erhu is a key instrument in both classical Chinese music and modern<br>  
+                    compositions, often used to evoke a wide range of emotions in performances.<br>  
+                    It is a symbol of China's rich musical heritage and continues to captivate audiences<br>  
+                    around the world.</span>
+            </div>
+            <div class="photo-container" onmouseover="playSound('sound5')" onmouseout="stopSound('sound5')">
+                <img  src="asset/baozi.png" alt="Photo 4">
+                <span class="hover-text">BAOZI</span>
+                <span class="hover-text2">
+                Baozi is a popular Chinese steamed bun filled with a variety of savory or sweet fillings.<br>  
+                The dough is soft and fluffy, typically made from flour, yeast, and water, and is steamed<br>   
+                to perfection. Common fillings include pork, beef, vegetables, or sweet red bean paste,<br>   
+                making baozi a versatile dish enjoyed across China and beyond. Often eaten as a snack,<br>   
+                breakfast, or part of a meal, baozi is a comforting, flavorful treat that reflects the<br>   
+                rich culinary traditions of Chinese cuisine. Its combination of tender dough and delicious<br>  
+                fillings makes it a beloved favorite for many.</span>
+            </div>
     </div>
 
     <audio id="sound1" src="asset/bbq.wav"></audio>
     <audio id="sound2" src="asset/hotpot.wav"></audio>
+    <audio id="sound3" src="asset/milktea.mp3"></audio>
+    <audio id="sound4" src="asset/erhu.wav"></audio>
+    <audio id="sound5" src="asset/baozi.wav"></audio>
 
     <script>
         function playSound(soundId) {
@@ -51,6 +129,8 @@
                 audioElement.currentTime = 0;
             }
         }
+        
+
     </script>
 
 </body>

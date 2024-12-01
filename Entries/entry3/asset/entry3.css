@@ -46,6 +46,7 @@ body{ background-color: black;
   visibility: visible;
   opacity: 1;
   transform: translateX(-50%) translateY(10px);}
+
   .tooltip::before {
     content: "";
     position: absolute;
@@ -61,7 +62,7 @@ body{ background-color: black;
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 280px;
+  margin-top: 200px;
 
   background-color: black;
 }
@@ -78,18 +79,6 @@ body{ background-color: black;
   transition: transform 0.5s ease;
 }
 
-.container-item:hover {
-  animation: rotateInfinite 2s linear infinite; 
-}
-
-@keyframes rotateInfinite {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}
 
 
 .vinyl-image {
@@ -97,28 +86,41 @@ body{ background-color: black;
   width: 80%;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 
-.hover-text {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  color: white;
-  background:transparent;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  opacity: 0;
- 
-  text-align: center;
+    .hover-text {
+      position: absolute;
+      bottom: -50px; 
+      left: 50%;
+      font-size: 14px;
+      color:#9eabff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      transform: translateX(-50%); 
+      z-index: 2; 
+  }
+
+  .container-item:hover .hover-text {
+    opacity: 1; 
 }
 
-.container-item:hover .hover-text {
-  opacity: 1;
-  transform: translateX(-50%) scale(1); 
+.container-item:hover .vinyl-image {
+  animation: rotateImage 2s linear infinite;}
+
+  @keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
+.container-item:hover .vinyl-image {
+  transform: scale(1.1);
+}
+
 
   .top-nav {
     background-color: transparent;
@@ -154,7 +156,6 @@ body{ background-color: black;
   .nav-item.active a {
     color: #9eabff;
     font-weight: bold;
-    border-bottom: 2px dashed #9eabff; 
   }
   
   .nav-item a:hover {
