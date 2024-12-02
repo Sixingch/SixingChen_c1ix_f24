@@ -179,7 +179,7 @@ body, html {
         background-position: center;
         top: 20px; /* Start at the top of the page */
         cursor: pointer;
-        z-index: 1;
+        z-index: 3;
         animation: fall 2s ease-in-out forwards;
     }
     
