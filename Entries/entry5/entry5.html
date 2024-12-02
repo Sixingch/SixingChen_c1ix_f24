@@ -27,16 +27,15 @@
             <audio id="wave-sound" src="asset/wave.wav" preload="auto"></audio>
             <button id="start-button"></button>
             <div id="bird-container"></div>
-            <div id="wave-container">
+            <div id="wave-container"> <img src="asset/wave.png" alt="Wave Image" id="wave-image">
             </div>
         </ul>
     </div>
-
+  
 
     
     <script>
-    
-    document.getElementById("start-button").addEventListener("click", function() {
+     document.getElementById("start-button").addEventListener("click", function() {
             this.style.display = "none"; 
             let birdAudio = document.getElementById("bird-sound");
             let waveAudio = document.getElementById("wave-sound");
@@ -57,17 +56,17 @@
             }
             let waveContainer = document.getElementById("wave-container");
             waveContainer.style.display = "block"; 
+            let waveImage = document.getElementById("wave-image");
+            let waveWidth = waveImage.width;
+            waveImage.style.position = "absolute";
+            waveImage.style.bottom = "0";
+            waveImage.style.left = "0";
+            waveImage.style.animation = `moveWave ${waveWidth * 4}s linear infinite`; 
             waveAudio.onended = function() {
                 waveContainer.style.display = "none"; 
                 let allBirds = document.querySelectorAll(".bird");
                 allBirds.forEach(bird => {
-                    bird.remove(); 
-                });
-            };
-               birdAudio.onended = function() {
-                let allBirds = document.querySelectorAll(".bird");
-                allBirds.forEach(bird => {
-                    bird.remove(); 
+                    bird.remove(); // 
                 });
             };
         });
