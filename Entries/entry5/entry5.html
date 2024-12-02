@@ -22,7 +22,7 @@
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
 
             <audio id="bird-sound" src="asset/birds.wav" preload="auto"></audio>
-
+            <audio id="wave-sound" src="asset/wave.wav" preload="auto"></audio>
             <button id="start-button"></button>
             <div id="bird-container"></div>
             <div id="wave-container"></div>
@@ -35,8 +35,10 @@
     
     document.getElementById("start-button").addEventListener("click", function() {
             this.style.display = "none"; 
-            let audio = document.getElementById("bird-sound");
-            audio.play();
+            let birdAudio = document.getElementById("bird-sound");
+            let waveAudio = document.getElementById("wave-sound");
+            birdAudio.play();
+            waveAudio.play();
             let birdContainer = document.getElementById("bird-container");
             for (let i = 0; i < 300; i++) {
                 let bird = document.createElement("div");
@@ -52,8 +54,14 @@
             }
             let waveContainer = document.getElementById("wave-container");
             waveContainer.style.display = "block"; 
-            audio.onended = function() {
+            waveAudio.onended = function() {
                 waveContainer.style.display = "none"; 
+                let allBirds = document.querySelectorAll(".bird");
+                allBirds.forEach(bird => {
+                    bird.remove(); 
+                });
+            };
+               birdAudio.onended = function() {
                 let allBirds = document.querySelectorAll(".bird");
                 allBirds.forEach(bird => {
                     bird.remove(); 
