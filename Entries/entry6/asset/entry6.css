@@ -6,7 +6,6 @@ body, html {
     background-color: #000;  
     font-family: Arial, sans-serif;
     position: relative;
-    overflow-y: scroll;
  }
  
 
@@ -157,55 +156,5 @@ body, html {
         }
         50% {
             border-color: black;
-        }
-    }
-
-    .red-area {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 50vh;
-        background-color: red;
-        z-index: 0;
-    }
-    
-
-    .ball {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-size: cover; 
-        background-position: center;
-        top: 20px; 
-        cursor: pointer;
-        z-index: 3;
-        animation: fall 2s ease-in-out forwards;
-    }
-    
-    #ball1 {
-        left: 10%;
-        background-image: url('ihttps://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/asset/bbq.jpg');
-    }
-    #ball2 {
-        left: 30%;
-        background-image: url('image2.jpg');
-    }
-    #ball3 {
-        left: 50%;
-        background-image: url('image3.jpg');
-    }
-    #ball4 {
-        left: 70%;
-        background-image: url('image4.jpg');
-    }
-    
-
-    @keyframes fall {
-        0% {
-            top: 20px;
-        }
-        100% {
-            top: 45vh; 
         }
     }
