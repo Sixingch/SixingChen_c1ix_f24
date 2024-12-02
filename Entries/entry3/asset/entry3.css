@@ -20,11 +20,24 @@ body{ background-color: black;
   color: #9eabff;  
   text-align:start; 
   font-size: 15px; 
-  margin-top: 10px;  
+  margin-top: 0px;  
   margin-left: 22px;
   z-index: 1;
   position:absolute;  
   font-family: Georgia, 'Times New Roman', Times, serif;
+  animation: shine 0.1s infinite alternate;
+}
+@keyframes shine {
+  0% {
+      color: #9eabff;
+  }
+  100% {
+      color: #ffffff; 
+  }
+}
+.hover-text-container:hover {
+  text-shadow: none; 
+  color: #ffffff; 
 }
 .tooltip {
   visibility: hidden;
@@ -92,20 +105,36 @@ body{ background-color: black;
 
     .hover-text {
       position: absolute;
-      bottom: -50px; 
+      bottom: -40px; 
       left: 50%;
-      font-size: 14px;
+      font-size: 12px;
       color:#9eabff;
       opacity: 0;
       transition: opacity 0.3s ease;
       transform: translateX(-50%); 
       z-index: 2; 
+      text-align: center;
   }
 
   .container-item:hover .hover-text {
     opacity: 1; 
 }
+.hover-text2 {
+  position: fixed;
+  bottom: 50px; 
+  left: 50%;
+  font-size: 12px;
+  color:#9eabff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: translateX(-50%); 
+  z-index: 2; 
+  text-align: center;
+}
 
+.container-item:hover .hover-text2 {
+opacity: 1; 
+}
 .container-item:hover .vinyl-image {
   animation: rotateImage 2s linear infinite;}
 

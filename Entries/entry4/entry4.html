@@ -8,14 +8,44 @@
     <link rel="icon" type="image/png" href="asset/Favicon.png">
 </head>
 <body>
-  <h1 class="main-title">SOUNDS OF TIME SQUARE</h1>
+  <h1 class="main-title">TIMES SQUARE</h1>
+  <div class="hover-text-container">
+    The forth stop
+    <span class="tooltip">
+      Times Square, often referred to as "The Cross-roads of the World,"<br> 
+      is one of New York City's most iconic and vibrant locations, known<br> 
+      for its dazzling lights, bustling energy, and rich cultural significance.<br> 
+      Located at the junction of Broadway and Seventh Avenue in Manhattan,<br>  
+      Times Square has long been a central point for both locals and tourists.<br>  
+      The area is renowned for its massive electronic billboards, which light up<br>  
+      the night sky, and its dense concentration of theaters, including the famous<br>  
+      Broadway theaters that showcase world-class performances.<br> 
+</span>
+
+<div class="scroll-target">
+  <h2>MAX NEUHAUS’ ‘TIMES SQUARE’</h2>
+  <p>This permanent sound installation, created by artist Max Neuhaus in 1977,<br> 
+    emits a deep, bell-like tone from a grate on the pedestrian island at Broadway<br> 
+    between 45th and 46th Streets. The sound originates from an underground vault,<br> 
+    producing a rich harmonic texture that contrasts with the surrounding urban noise.<br> 
+    Neuhaus designed the installation to be subtle and unmarked, encouraging accidental<br> 
+    discovery by passersby. After being removed in 1992, it was reinstalled in 2002 and<br> 
+    continues to offer a moment of unexpected serenity amidst the city's constant activity.<br>
+  <br>
+  <br>
+  <br><br><br><br><br><br><br><br><br><br>
+</p>
+</div>
+
+<h1 class="click">click it</h1>
+
   <div class="top-nav">
     <ul class="nav-links">
       <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
+      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">MTA</a></li>
       <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
       <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
+      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESSQUARE</a></li>
       <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
       <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
       <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
@@ -23,10 +53,81 @@
       </ul>
   </div>
 
-  <video autoplay muted loop class="video-background">
-    <source src="asset/time.mp4" type="video/mp4">
-    Your browser does not support HTML video.
-  </video>
+  <img class="time"  src="asset/time.png" alt="time">
+  
+  <button class="scroll-down" id="scrollDownBtn">↓</button>
+<div class="content"></div>
 
+<button id="playBtn" class="play-btn">
+  <span class="play-text"></span>
+</button>
+<audio id="initialAudio" preload="auto">
+  <source src="asset/chapter1.wav" type="audio/mp3">
+</audio>
+<audio id="targetAudio" preload="auto">
+  <source src="asset/hum.wav" type="audio/mp3">
+</audio>
+
+
+
+
+<script>
+const scrollDownButton = document.getElementById('scrollDownBtn');
+const targetElement = document.querySelector('.scroll-target');
+scrollDownButton.addEventListener('click', function() {
+    targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+    scrollDownButton.style.display = 'none';
+});
+window.addEventListener('scroll', function() {
+    if (window.scrollY === 0) {
+        scrollDownButton.style.display = 'block';
+    }
+});
+
+
+const playBtn = document.getElementById('playBtn');
+const scrollDownBtn = document.getElementById('scrollDownBtn');
+const initialAudio = document.getElementById('initialAudio');
+const targetAudio = document.getElementById('targetAudio');
+
+let isInitialAudioPlaying = false; 
+function playSound(audio) {
+    audio.play();
+    playBtn.classList.add('playing'); 
+}
+function stopSound(audio) {
+    audio.pause();
+    audio.currentTime = 0; 
+    playBtn.classList.remove('playing'); 
+}
+playBtn.addEventListener('click', function() {
+    if (isInitialAudioPlaying) {
+        stopSound(initialAudio); 
+        playSound(targetAudio); 
+        isInitialAudioPlaying = false;
+    } else {
+        stopSound(targetAudio); 
+        playSound(initialAudio); 
+        isInitialAudioPlaying = true; 
+    }
+});
+scrollDownBtn.addEventListener('click', function() {
+    stopSound(initialAudio);  
+    stopSound(targetAudio);  
+});
+window.addEventListener('scroll', function() {
+    const scrollY = window.scrollY;
+    if (scrollY === 0) {
+        stopSound(targetAudio);  
+    }
+});
+
+
+
+</script>
 </body>
 </html>
+
