@@ -5,13 +5,26 @@ body, html {
     width: 100%;
     background-color: #000;  
     font-family: Arial, sans-serif;
+    position: relative;
+    overflow-y: scroll;
  }
+ 
+
+ body::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 50vh; 
+    background-color: red; 
+}
 
 .main-title {
     color: #ff0000;  
     text-align:start; 
     font-size: 40px; 
-    margin-top: 50px;  
+    margin-top: 60px;  
     margin-left: 19px;
     z-index: 1;
     position:absolute;  
@@ -47,7 +60,6 @@ body, html {
 .nav-item.active a {
     color: #fa6060;
     font-weight: bold;
-    border-bottom: 1px dashed #fba1a1;
 }
 
 .nav-item a:hover {
@@ -55,29 +67,145 @@ body, html {
     color: #ffffff;
 }
 
-.video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100vw;  
-    padding-top: 120px;  
-    box-sizing: border-box;  
-}
-
-.video-item {
-    width: 100%; 
-    height: auto; 
-    max-height: 400px; 
-    object-fit: cover; 
-    background-color: black;  
-    border-radius: 10px;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  
-    cursor: pointer;  
-    transition: opacity 0.3s ease-in-out; 
-}
 
 
-.transparent {
-    opacity: 0.3;  
-}
+.hover-text-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #ff3434;  
+    text-align:start; 
+    font-size: 15px; 
+    margin-top: 120px;  
+    margin-left: 22px;
+    z-index: 1;
+    position:absolute;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: shine 0.1s infinite alternate;
+  }
+  @keyframes shine {
+    0% {
+        color: #ff3434;
+    }
+    100% {
+        color: #ffffff; 
+    }
+  }
+  .hover-text-container:hover {
+    text-shadow: none; 
+    color: #ffffff; 
+  }
+  .tooltip {
+    visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 160%; 
+      left: 250%; 
+      transform: translateX(-50%);
+      background-color:transparent;
+      color: #ff3434;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform-origin: top center;
+  }
+  .hover-text-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);}
+  
+    .tooltip::before {
+      content: "";
+      position: absolute;
+      bottom: 100%; 
+      left: 10%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent transparent #ff3434 transparent;
+    }
+
+    .typing-text {
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        white-space: nowrap;
+        overflow: hidden; 
+        position: absolute;
+        color: #000000;
+        animation: typing 3s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+        position: absolute; 
+        top: 70%; 
+        left: 70%;
+        transform: translate(-50%, -50%);
+        z-index:1;
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 40%;
+        }
+    }
+
+    @keyframes blink {
+        0%, 100% {
+            border-color: transparent;
+        }
+        50% {
+            border-color: black;
+        }
+    }
+
+    .red-area {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50vh;
+        background-color: red;
+        z-index: 0;
+    }
+    
+
+    .ball {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-size: cover; /* Make the image cover the ball */
+        background-position: center;
+        top: 20px; /* Start at the top of the page */
+        cursor: pointer;
+        z-index: 1;
+        animation: fall 2s ease-in-out forwards;
+    }
+    
+    #ball1 {
+        left: 10%;
+        background-image: url('ihttps://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/asset/bbq.jpg');
+    }
+    #ball2 {
+        left: 30%;
+        background-image: url('image2.jpg');
+    }
+    #ball3 {
+        left: 50%;
+        background-image: url('image3.jpg');
+    }
+    #ball4 {
+        left: 70%;
+        background-image: url('image4.jpg');
+    }
+    
+    /* Ball fall animation */
+    @keyframes fall {
+        0% {
+            top: 20px; /* Start from top */
+        }
+        100% {
+            top: 45vh; /* Fall to 45% of the screen height */
+        }
+    }

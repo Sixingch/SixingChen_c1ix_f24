@@ -8,69 +8,83 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="main-title">SOUNDS OF K-TOWN</h1>
+    <h1 class="main-title">K-TOWN</h1>
+    <div class="hover-text-container">
+    The sixth stop
+    <span class="tooltip">
+        K-Town, or Koreatown, is a vibrant neighborhood in Midtown Manhattan,<br>
+        known for its rich Korean culture, cuisine, and entertainment. Located<br> 
+        along a few blocks of West 32nd Street between Broadway and Fifth Avenue,<br> 
+        K-Town is packed with Korean restaurants, bakeries, karaoke bars, and<br> 
+        shops, making it a popular destination for both locals and tourists.<br> 
+        The area offers a unique blend of traditional Korean flavors, from BBQ<br>
+        to banchan, alongside modern entertainment and nightlife, creating a lively<br> 
+        atmosphere that reflects New York City's multicultural spirit.</span>
+</div>
+     <div class="typing-text">
+        K-Town in New York City is filled with a diverse array of sounds<br>  
+        that reflect its lively, multicultural atmosphere. You’ll often<br>  
+        hear the rhythmic hum of bustling crowds, especially during the<br>  
+        evening hours when the streets come alive with people visiting<br>  
+        restaurants, karaoke bars, and shops. The clatter of chopsticks<br>  
+        and sizzling sounds from Korean BBQ restaurants, where meats are<br>  
+        grilled at the table, adds to the vibrant soundscape.</div> 
 
     <div class="top-nav">
         <ul class="nav-links">
             <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">MTA</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">NYC PARK</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESSQUARE</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">SOUTH ST.SEAPORT</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
 
         </ul>
     </div>
    
-    <div class="video-container">
-        <video class="video-item" muted loop>
-            <source src="asset/bbq.mp4" type="video/mp4">
-    
-        </video>
-        <video class="video-item" muted loop>
-            <source src="asset/bbq.mp4" type="video/mp4">
+    <div class="red-area"></div>
+    <div class="ball" id="ball1"></div>
+    <div class="ball" id="ball2"></div>
+    <div class="ball" id="ball3"></div>
+    <div class="ball" id="ball4"></div>
+    <audio id="audio1" src="asset/bbq.mp4" preload="auto"></audio>
+    <audio id="audio2" src="asset/car.wav" preload="auto"></audio>
+    <audio id="audio3" src="audio3.mp3" preload="auto"></audio>
+    <audio id="audio4" src="audio4.mp3" preload="auto"></audio>
 
-        </video>
-        <video class="video-item" muted loop>
-            <source src="asset/bbq.mp4" type="video/mp4">
- 
-        </video>
    
 
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const videos = document.querySelectorAll('.video-item');
-        
-                videos.forEach(video => {
+            const text = " K-Town in New York City is filled with a diverse array of sounds<br>that reflect its lively, multicultural atmosphere. You’ll often<br>hear the rhythmic hum of bustling crowds, especially during the<br>evening hours when the streets come alive with people visiting<br>restaurants, karaoke bars, and shops. The clatter of chopsticks<br>and sizzling sounds from Korean BBQ restaurants, where meats are<br>grilled at the table, adds to the vibrant soundscape.";
+        let index = 0;
+        const typingSpeed = 100; 
 
-                    video.addEventListener('mouseenter', () => {
-                        videos.forEach(v => {
-                            if (v !== video) {
-                                v.classList.add('transparent'); 
-                                v.muted = true;  
-                                v.pause();  
-                            }
-                        });
-                        video.classList.remove('transparent');  
-                        video.muted = false;  
-                        video.play();  
-                    });
-        
-                  
-                    video.addEventListener('mouseleave', () => {
-                        videos.forEach(v => {
-                            v.classList.remove('transparent'); 
-                            v.muted = true; 
-                        });
-                        video.pause();  
-                    });
-                });
-            });
-        </script>
-        
-        
-        
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, typingSpeed);
+            }
+        }
+        typeWriter();
+
+        const ball1 = document.getElementById("ball1");
+        const ball2 = document.getElementById("ball2");
+        const ball3 = document.getElementById("ball3");
+        const ball4 = document.getElementById("ball4");
+
+        const audio1 = document.getElementById("audio1");
+        const audio2 = document.getElementById("audio2");
+        const audio3 = document.getElementById("audio3");
+        const audio4 = document.getElementById("audio4");
+
+        ball1.addEventListener("click", () => audio1.play());
+        ball2.addEventListener("click", () => audio2.play());
+        ball3.addEventListener("click", () => audio3.play());
+        ball4.addEventListener("click", () => audio4.play());
+
+    </script>
     
 </body>
