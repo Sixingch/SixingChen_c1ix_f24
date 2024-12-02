@@ -8,77 +8,43 @@
     <link rel="icon" type="image/png" href="asset/Favicon.png">
 </head>
 <body>
-    <h1 class="main-title">SOUNDS OF HARBOR</h1>
+    <h1 class="main-title">SOUTH ST.SEAPORT</h1>
 
     <div class="top-nav">
         <ul class="nav-links">
             <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">NYC PARK</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">SOUTH ST.SEAPORT</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
 
+            <button id="start-button">Start the Birds!</button>
+            <div id="bird-container"></div>
+
         </ul>
     </div>
-
-    <video autoplay muted loop class="video-background">
-        <source src="asset/river.mp4" type="video/mp4">
-      </video>
-
-      <div class="video-container">
-        <video autoplay muted loop class="square-video">
-            <source src="asset/Birds.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop class="square-video">
-            <source src="asset/river.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop class="square-video">
-            <source src="asset/river.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop class="square-video">
-            <source src="asset/Birds.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop class="square-video">
-            <source src="asset/river.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop class="square-video">
-            <source src="asset/Birds.mp4" type="video/mp4">
-        </video>
-    </div>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const videos = document.querySelectorAll('.square-video');
+   document.getElementById("start-button").addEventListener("click", function() {
+  let birdContainer = document.getElementById("bird-container");
+  for (let i = 0; i < 100; i++) {
+    let bird = document.createElement("div");
+    bird.classList.add("bird");
+    bird.style.left = `${Math.random() * 100}vw`;
+    bird.style.top = `${Math.random() * 100}vh`;
+    bird.style.backgroundImage = "url('SixingChen_c1ix_f24/Entries/entry5/asset/bird.png')";  
+    bird.style.setProperty('--random-y', Math.random() * 2 - 1); 
+    birdContainer.appendChild(bird);
+    bird.addEventListener("animationend", () => {
+      bird.remove();
+    });
+  }
+});
+</script>
+
     
-            videos.forEach(video => {
-            
-                video.addEventListener('mouseenter', () => {
-                    
-                    videos.forEach(v => {
-                        if (v !== video) {
-                            v.classList.add('transparent');
-                        }
-                    });
-    
-                   
-                    video.muted = false;
-                    video.play();
-                });
-    
-              
-                video.addEventListener('mouseleave', () => {
-                   
-                    videos.forEach(v => v.classList.remove('transparent'));
-    
-                   
-                    video.muted = true;
-                });
-            });
-        });
-    </script>
     
 </body>
 </html>

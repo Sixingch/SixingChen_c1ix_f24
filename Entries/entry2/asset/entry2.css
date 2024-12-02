@@ -10,20 +10,20 @@
 }
 
 .content{
-  margin-top: 760px;
+  margin-top: 800px;
   color: #ffffff;
   position: absolute;
-
   margin-left: 20px;
 
 }
 .content2{
-  margin-top: 800px;
+  margin-top: 850px;
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   margin-left: 20px;
   color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: Arial, sans-serif;
+  font-style: normal;
 }
 
 .container {

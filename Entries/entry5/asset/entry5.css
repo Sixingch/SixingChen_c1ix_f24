@@ -2,9 +2,47 @@ body {
     background-color: black;
       margin: 0;
       padding: 0;
-      height: 100%;
+      overflow: hidden; 
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
       font-family: Arial, sans-serif;
     }
+    #start-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      #bird-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none; 
+      }
+      .bird {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: flyAcross 4s linear infinite;
+      }
+      
+      @keyframes flyAcross {
+        0% {
+          transform: translateX(-100px) translateY(0);
+        }
+        100% {
+          transform: translateX(100vw) translateY(calc(100vh * var(--random-y)));
+        }
+      }
+      
 
     .main-title {
         color: #b1d0ff;  
@@ -26,44 +64,9 @@ body {
       z-index: -1; 
     }
   
-    .video-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);  
-        gap: 15px; 
-        position: relative;
-        z-index: 1;  
-        padding: 110px;
-        justify-items: center; 
-        align-items: center; 
-        transition: all 0.3s ease;
-    }
     
-    .square-video {
-        width: 600px;  
-        height: 400px;  
-        object-fit: cover;
-        border: 1px solid #fff;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .square-video.transparent {
-        opacity: 0.3;  
-    }
-    
-    
-   
-    .square-video:nth-child(odd) {
-        transform: translateY(20px);  
-    }
-    
-    .square-video:nth-child(even) {
-        transform: translateY(-20px);  
-    }
 
 
-    
-    
 
 .top-nav {
     background-color: transparent;
@@ -93,7 +96,6 @@ body {
 .nav-item.active a {
     color: #60a3fa;
     font-weight: bold;
-    border-bottom: 1px dashed #a1befb;
     
 }
 
