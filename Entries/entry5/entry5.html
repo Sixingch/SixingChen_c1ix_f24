@@ -21,27 +21,45 @@
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
 
-            <button id="start-button">Start the Birds!</button>
-            <div id="bird-container"></div>
+            <audio id="bird-sound" src="asset/birds.wav" preload="auto"></audio>
 
+            <button id="start-button"></button>
+            <div id="bird-container"></div>
+            <div id="wave-container"></div>
         </ul>
     </div>
+
+
+    
     <script>
-   document.getElementById("start-button").addEventListener("click", function() {
-  let birdContainer = document.getElementById("bird-container");
-  for (let i = 0; i < 100; i++) {
-    let bird = document.createElement("div");
-    bird.classList.add("bird");
-    bird.style.left = `${Math.random() * 100}vw`;
-    bird.style.top = `${Math.random() * 100}vh`;
-    bird.style.backgroundImage = "url('SixingChen_c1ix_f24/Entries/entry5/asset/bird.png')";  
-    bird.style.setProperty('--random-y', Math.random() * 2 - 1); 
-    birdContainer.appendChild(bird);
-    bird.addEventListener("animationend", () => {
-      bird.remove();
-    });
-  }
-});
+    
+    document.getElementById("start-button").addEventListener("click", function() {
+            this.style.display = "none"; 
+            let audio = document.getElementById("bird-sound");
+            audio.play();
+            let birdContainer = document.getElementById("bird-container");
+            for (let i = 0; i < 300; i++) {
+                let bird = document.createElement("div");
+                bird.classList.add("bird");
+                bird.style.left = `${Math.random() * 100}vw`;
+                bird.style.top = `${Math.random() * 100}vh`;
+                bird.style.backgroundImage = "url('https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/asset/bird.png')";
+                bird.style.setProperty('--random-y', Math.random() * 2 - 1);
+                birdContainer.appendChild(bird);
+                bird.addEventListener("animationend", () => {
+                    bird.remove();
+                });
+            }
+            let waveContainer = document.getElementById("wave-container");
+            waveContainer.style.display = "block"; 
+            audio.onended = function() {
+                waveContainer.style.display = "none"; 
+                let allBirds = document.querySelectorAll(".bird");
+                allBirds.forEach(bird => {
+                    bird.remove(); 
+                });
+            };
+        });
 </script>
 
     
