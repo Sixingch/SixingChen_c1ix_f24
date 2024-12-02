@@ -98,7 +98,7 @@ body {
 .nav-item.active a {
   color: #12b003;
   font-weight: bold;
-  border-bottom: 1px dashed #12b003;
+
 }
 
 .nav-item a:hover {

@@ -1,54 +1,113 @@
-body{
-    background-color: rgb(242, 247, 245);
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+  background-color: #000000;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-family: Arial, sans-serif; 
 }
 
 .main-title {
-    color: #000000;  
-    font-size: 200px; 
-    margin-top: 50px;  
-    margin-left: 19px;
-    z-index: 1;
-    position:absolute;  
-    text-align: left;
-    
+  color: #ffffff;  
+  text-align:st art; 
+  font-size: 150px; 
+  margin-top: 50px;  
+  margin-left: 19px;
+  z-index: -1;
+  position:absolute;  
+}
+
+.sub{
+  color: #ffffff;  
+  font-size: 15px; 
+  margin-top: 700px;  
+  margin-left: 19px;
+  z-index: 1;
+  position:absolute;  
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+  gap: 20px; 
+  transition: transform 0.3s; 
+
+}
+
+
+.circle-link {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 95px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  animation: spinShrink 2s infinite ease-in-out;
+  opacity: 60%; 
   }
 
-.top-nav {
-  background-color: transparent;
-  padding: 10px 20px;
-  border-bottom: 0.5px solid#000000;
-top: 0%;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
 
-.nav-item {
-  margin-right: 20px;
-}
 
-.nav-item a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 14px;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.nav-item.active a {
-  color: #000000;
-  font-weight: bold;
-  border-bottom: 1px none #000000;
-}
-
-.nav-item a:hover {
-  transform: scale(1.2); 
-  color: #ffffff;
+@keyframes spinShrink {
+  0% {
+      transform: scale(1) ; 
+  }
+  50% {
+      transform: scale(0.8) ;
+  }
+  100% {
+      transform: scale(1) ;
+  }
 }
 
 
 
+.color-green {
+  background-color: #12b003; 
+  font-size: 13px;
+}
+
+.color-orange {
+  background-color: rgb(187, 103, 0); 
+  font-size: 13px;
+}
+
+.color-purple {
+  background-color: #9eabff; 
+  font-size: 13px;
+}
+
+.color-glow {
+  background-color: rgb(255, 191, 0);
+  font-size: 13px; 
+}
+
+.color-blue{background-color: rgb(2, 133, 255);
+  font-size: 13px;}
+
+
+.color-red{background-color: red;
+  font-size: 13px;}
+
+.color-yellow{background-color: yellow;
+  font-size: 13px;
+color: #5500ff;}
+
+.circle-link:hover {
+  opacity: 1;
+   
+}
+
+.circle-container {
+  position: relative;
+  width: 800px;
+  height: 800px; 
+  background-color:transparent; 
+  border: transparent; 
+  overflow: hidden; }
+  

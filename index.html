@@ -7,20 +7,63 @@
     <link rel="stylesheet" type="text/css" href="asset/index.css">
     <link rel="icon" type="image/png" href="asset/Favicon.png">
 </head>
-<h1 class="main-title">SOUNDS <br> OF <br> CITY</h1>
+<h1 class="main-title">SOUNDS OF CITY</h1>
+<p class="sub">This website is dedicated to exploring the city through the medium of sound</p>
+<div class="circle-container">
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html" class="circle-link color-green" data-text="Entry 1">MTA</a>
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html" class="circle-link color-orange" data-text="Entry 2">NYC PARK</a>
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html" class="circle-link color-purple" data-text="Entry 3">STREET</a>
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html" class="circle-link color-glow" data-text="Entry 4">TIMESSQUARE</a>
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html" class="circle-link color-blue" data-text="Entry 5">HARBOR</a>
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html" class="circle-link color-red" data-text="Entry 6">K-TOWN</a>
+<a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html" class="circle-link color-yellow" data-text="Entry 7">FLUSHING</a>
+</div>
 
-<div class="top-nav">
-    <ul class="nav-links">
-      <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">PARK</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
-      <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
-  </ul>
-  </div>
+
+    
+<script>
+const circles = document.querySelectorAll('.circle-link');
+const container = document.querySelector('.circle-container');
+const containerWidth = container.offsetWidth;
+const containerHeight = container.offsetHeight;
+let circlePositions = [];
+function getRandomPosition() {
+    const circleSize = 90; 
+    const x = Math.floor(Math.random() * (containerWidth - circleSize)); 
+    const y = Math.floor(Math.random() * (containerHeight - circleSize)); 
+    return { x, y };
+}
+
+function checkOverlap(newX, newY) {
+    for (let pos of circlePositions) {
+        const distance = Math.sqrt(Math.pow(newX - pos.x, 2) + Math.pow(newY - pos.y, 2));
+        if (distance < 60) { 
+            return true;
+        }
+    }
+    return false;
+}
+
+circles.forEach(circle => {
+    let posX, posY, isOverlapping;
+    do {
+        const { x, y } = getRandomPosition();
+        isOverlapping = checkOverlap(x, y);
+        if (!isOverlapping) {
+            posX = x;
+            posY = y;
+            circlePositions.push({ x: posX, y: posY });
+        }
+    } while (isOverlapping); 
+
+    circle.style.left = `${posX}px`;
+    circle.style.top = `${posY}px`;
+});
+
+
+
+</script>
+
 <body>
 </body>
 </html>
