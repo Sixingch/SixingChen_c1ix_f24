@@ -33,28 +33,37 @@
         <img src="asset/wave.png" alt="Wave Image" id="wave-image">
     </div>
 
+    <div id="boat-container">
+        <img src="asset/boat.png" alt="Boat Image" id="boat-image">
+    </div>
+
     <audio id="bird-sound" src="asset/birds.wav" preload="auto"></audio>
     <audio id="wave-sound" src="asset/wave.wav" preload="auto"></audio>
+    <audio id="boat-sound" src="asset/boat.wav" preload="auto"></audio>
 
     <div id="photos-container" class="photos-grid"></div>
+    
 
 
     
     <script>
         document.getElementById("start-button").addEventListener("click", function() {
-            document.getElementById("click-here").style.display = "none";
+            document.getElementById("click-here").style.display = "none"; 
             let newText = document.createElement("div");
             newText.classList.add("centered-text");
-            newText.innerHTML = "South Street Seaport is a historic district located in the Financial District <br> of Manhattan, along the East River. Once the center of New York City's maritime trade,<br>  it was a bustling hub for ships and merchants from around the world during the 18th and 19th centuries.<br>  Today, South Street Seaport blends rich history with modern attractions, offering cobblestone streets,<br> restored 19th-century buildings, and a collection of historic ships, including the Wavertree and Peking.<br> It also hosts a variety of shops, restaurants, and cultural events, making it a popular destination for both locals<br>  and tourists. The Seaport’s museum, waterfront views, and lively atmosphere offer a unique glimpse<br>into the city's storied past while embracing its vibrant present."; 
+            newText.innerHTML = "South Street Seaport is a historic district located in the Financial District <br> of Manhattan, along the East River. Once the center of New York City's maritime trade,<br>  it was a bustling hub for ships and merchants from around the world during the 18th and 19th centuries.<br>  Today, South Street Seaport blends rich history with modern attractions, offering cobblestone streets,<br> restored 19th-century buildings, and a collection of historic ships, including the Wavertree and Peking.<br> It also hosts a variety of shops, restaurants, and cultural events, making it a popular destination for both locals<br>  and tourists. The Seaport’s museum, waterfront views, and lively atmosphere offer a unique glimpse<br>into the city's storied past while embracing its vibrant present."
             document.body.appendChild(newText);
 
-            this.style.display = "none";
-
+            this.style.display = "none"; 
             let birdAudio = document.getElementById("bird-sound");
             let waveAudio = document.getElementById("wave-sound");
+            let boatAudio = document.getElementById("boat-sound");
             birdAudio.play();
             waveAudio.play();
-            let birdContainer = document.getElementById("bird-container");
+            boatAudio.play(); 
+            let boatContainer = document.getElementById("boat-container");
+            boatContainer.style.display = "block"; 
+            let birdContainer = document.getElementById("bird-container")
             for (let i = 0; i < 300; i++) {
                 let bird = document.createElement("div");
                 bird.classList.add("bird");
@@ -67,7 +76,6 @@
                     bird.remove();
                 });
             }
-
             let waveContainer = document.getElementById("wave-container");
             waveContainer.style.display = "block"; 
             waveAudio.onended = function() {
