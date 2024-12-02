@@ -15,28 +15,41 @@
     <div class="top-nav">
         <ul class="nav-links">
             <li class="nav-item active"><a href="https://sixingch.github.io/SixingChen_c1ix_f24">SOUNDS OF CITY</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">SUBWAY STATION</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">MTA</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">NYC PARK</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a></li>
-            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESQUARE</a></li>
+            <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESSQUARE</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">SOUTH ST.SEAPORT</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a></li>
             <li class="nav-item"><a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a></li>
-
-            <audio id="bird-sound" src="asset/birds.wav" preload="auto"></audio>
-            <audio id="wave-sound" src="asset/wave.wav" preload="auto"></audio>
-            <button id="start-button"></button>
-            <div id="bird-container"></div>
-            <div id="wave-container"> <img src="asset/wave.png" alt="Wave Image" id="wave-image">
-            </div>
-        </ul>
+ </ul>
     </div>
-  
+
+    <div id="click-here" class="centered-text">CLICK HERE</div>
+
+    <button id="start-button"></button>
+    <div id="bird-container"></div>
+    <div id="wave-container">
+        <img src="asset/wave.png" alt="Wave Image" id="wave-image">
+    </div>
+
+    <audio id="bird-sound" src="asset/birds.wav" preload="auto"></audio>
+    <audio id="wave-sound" src="asset/wave.wav" preload="auto"></audio>
+
+    <div id="photos-container" class="photos-grid"></div>
+
 
     
     <script>
-     document.getElementById("start-button").addEventListener("click", function() {
-            this.style.display = "none"; 
+        document.getElementById("start-button").addEventListener("click", function() {
+            document.getElementById("click-here").style.display = "none";
+            let newText = document.createElement("div");
+            newText.classList.add("centered-text");
+            newText.innerHTML = "South Street Seaport is a historic district located in the Financial District <br> of Manhattan, along the East River. Once the center of New York City's maritime trade,<br>  it was a bustling hub for ships and merchants from around the world during the 18th and 19th centuries.<br>  Today, South Street Seaport blends rich history with modern attractions, offering cobblestone streets,<br> restored 19th-century buildings, and a collection of historic ships, including the Wavertree and Peking.<br> It also hosts a variety of shops, restaurants, and cultural events, making it a popular destination for both locals<br>  and tourists. The Seaport’s museum, waterfront views, and lively atmosphere offer a unique glimpse<br>into the city's storied past while embracing its vibrant present."; 
+            document.body.appendChild(newText);
+
+            this.style.display = "none";
+
             let birdAudio = document.getElementById("bird-sound");
             let waveAudio = document.getElementById("wave-sound");
             birdAudio.play();
@@ -54,19 +67,28 @@
                     bird.remove();
                 });
             }
+
             let waveContainer = document.getElementById("wave-container");
             waveContainer.style.display = "block"; 
-            let waveImage = document.getElementById("wave-image");
-            let waveWidth = waveImage.width;
-            waveImage.style.position = "absolute";
-            waveImage.style.bottom = "0";
-            waveImage.style.left = "0";
-            waveImage.style.animation = `moveWave ${waveWidth * 4}s linear infinite`; 
             waveAudio.onended = function() {
+                let photosContainer = document.getElementById("photos-container");
+                for (let i = 0; i < 5; i++) { 
+                    let photo = document.createElement("img");
+                    photo.src = "https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/asset/seaport.jpg";  
+                    photo.alt = "Photo " + (i + 1);
+                    photo.classList.add("dynamic-photo");
+                    photosContainer.appendChild(photo);
+                }
                 waveContainer.style.display = "none"; 
                 let allBirds = document.querySelectorAll(".bird");
                 allBirds.forEach(bird => {
-                    bird.remove(); // 
+                    bird.remove(); 
+                });
+            };
+            birdAudio.onended = function() {
+                let allBirds = document.querySelectorAll(".bird");
+                allBirds.forEach(bird => {
+                    bird.remove(); 
                 });
             };
         });
