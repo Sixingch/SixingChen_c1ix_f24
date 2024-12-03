@@ -30,6 +30,9 @@
 
           <div id="carContainer"></div>
 
+          <audio id="audio" src="asset/ktown.wav" preload="auto"></audio>
+          <div id="imageContainer"></div>
+
           <script>
             window.onload = () => {
                 const carContainer = document.getElementById("carContainer");
@@ -50,6 +53,32 @@
                     car.style.animation = `${direction} 10s linear infinite ${delay}`;
                 });
             }
+
+
+            document.body.addEventListener('click', () => {
+            const audio = document.getElementById('audio');
+            audio.play();
+            createRaindrops();
+            audio.onended = function () {
+                const images = document.querySelectorAll(".rain-image");
+                images.forEach(image => image.style.animationPlayState = 'paused');
+            };
+        });
+        function createRaindrops() {
+            const imageContainer = document.getElementById("imageContainer");
+            for (let i = 0; i < 100; i++) {
+                const image = document.createElement("img");
+                image.src = "https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry10/asset/2077.png"; 
+                image.classList.add("rain-image");
+                image.style.left = `${Math.random() * 100}%`; 
+                imageContainer.appendChild(image);
+            }
+            const images = document.querySelectorAll(".rain-image");
+            images.forEach((image, index) => {
+                const delay = Math.random() * 5 + 's'; 
+                image.style.animation = `rainfall 3s linear infinite ${delay}`;
+            });
+        }
         </script>
 
 
