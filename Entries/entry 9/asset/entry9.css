@@ -1,0 +1,206 @@
+.main-title {
+    color: #000000; 
+    font-size: 100px; 
+    z-index: 1;
+    position: absolute; 
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.text{
+    font-family:Arial, sans-serif ;
+    font-size: 10px;
+    text-align: -webkit-center;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.body{
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; 
+    height: 100vh;
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: absolute;
+    left: 48.5%;
+    top: 0%;
+  }
+  
+  .item {
+    text-align: center;
+  }
+  
+  #Layer_1 {
+    height: 500px;
+  }
+  
+  @keyframes Layer_1Spin {
+    0% {
+      transform: rotate(0turn);
+    }
+    100% {
+      transform: rotate(1turn);
+    }
+    0%{opacity: 1}
+    50%{opacity: 0;}
+    100%{opacity:1;}
+  }
+  
+  #Layer_1 {
+    animation: Layer_1Spin 5s ease-out infinite;
+    height:50px;
+  }
+  
+  #audio {
+    display: none; 
+  }
+  
+  #audio-button {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    left: 49%;
+    top: 95%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  #audio-button:hover {
+    background-color: #a1a1a1;
+  }
+
+.m1{
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    height: 80px;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    direction: left;
+    width: 100%; 
+}
+.m2{
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    height: 80px;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    direction: right;
+    width: 100%; 
+}
+.m3{
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    height: 80px;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    direction: left;
+    width: 100%; 
+}
+.m4{
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    height: 80px;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    direction: right;
+    width: 100%; 
+}
+
+
+.dropbtn {
+    background-color: #000000;
+    color: white;
+    padding: 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent; 
+    min-width: 160px;
+    z-index: 1;
+    font-size: 12px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd; }
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #000000;}
+
+  .shaking{
+   top:50%;
+   position: absolute;
+
+  }
+  .a{
+right: -1300px;
+position: absolute;
+animation: a 0.8s ease-in-out infinite;}
+
+@keyframes a {
+    0% {
+      transform: rotate(0turn);
+    }
+    50% {
+        transform: rotate(0.05turn);
+      }
+
+    100% {
+      transform: rotate(0.1turn);
+    }
+
+  }
+  .b{
+right:-400px;
+position: absolute;
+animation: b 0.8s ease-in-out infinite;}
+
+@keyframes b {
+    0% {
+      transform: rotate(0turn);
+    }
+    50% {
+        transform: rotate(-0.05turn);
+      }
+
+    100% {
+      transform: rotate(-0.1turn);
+    }
+
+  }
