@@ -9,11 +9,82 @@
 <body>
 
     <h1 class="main-title">1624</h1>
+    <p class="text" id="text1" style="display:none;">In 1624, the Dutch established the settlement of New Amsterdam on the southern tip<br>
+        of what is now Manhattan Island. This marked the beginning of European colonization<br> 
+        in the area. New Amsterdam was founded by the Dutch West India Company as a trading<br> 
+        post, aiming to capitalize on the fur trade and its strategic location along the Hudson<br> 
+        River. The settlement quickly grew, attracting settlers from various countries, including<br> 
+        the Dutch, Germans, Scandinavians, and Jews, creating a diverse and cosmopolitan community.<br>
+
+        The colony thrived as a major port, with its strategic location enabling trade between Europe<br> 
+        and the New World. The area was initially a peaceful place, with the Dutch forging friendly<br> 
+        relations with the local Lenape Native Americans. However, this would change as the English<br> 
+        took over in 1664, renaming the colony New York after the Duke of York.<br>
+        
+        The establishment of New Amsterdam is a foundational moment in New York City's history,<br> 
+        as it set the stage for the city's rapid growth and eventual transformation into one of<br> 
+        the most important economic and cultural centers in the world.</p>
+
+        <p class="text" id="text2" style="display:none;">
+            Imagine standing at the bustling port of New Amsterdam in 1624, as the Dutch settlers arrive<br>  
+            and begin to establish their colony on the shores of Manhattan. The soundscape is one of early<br>  
+            European settlement meeting the untamed wilderness of the New World.
+        </p>
+
     <video autoplay loop muted class="background-video">
         <source src="asset/texture.mp4" type="video/mp4">
     </video>
 
-    <div class="background-image"></div>
+<img src="asset/1642.png" alt="1642" class="background-image" style="display:none;">
+<audio id="audio" src="asset/land.wav" preload="auto"></audio>
+
+<div id="shipsContainer"></div>
+
+<script>
+document.body.addEventListener('click', () => {
+            const mainTitle = document.querySelector('.main-title');
+            mainTitle.style.transition = 'font-size 2s ease';
+            mainTitle.style.fontSize = '70px';
+            const audio = document.getElementById('audio');
+            audio.play();
+            const text1 = document.getElementById('text1');
+            const image = document.querySelector('.background-image');
+
+            text1.style.display = 'block';
+            image.style.display = 'block';
+            setTimeout(() => {
+                text1.style.display = 'none';
+                const text2 = document.getElementById('text2');
+                text2.style.display = 'block';
+            }, 10000);
+            addAndAnimateShips(audio);
+        });
+
+        function addAndAnimateShips(audio) {
+            const shipsContainer = document.getElementById("shipsContainer");
+            for (let i = 0; i < 5; i++) {
+                const ship = document.createElement("img");
+                ship.src = "asset/ship.png";  
+                ship.classList.add("ship");
+                ship.style.position = "absolute";
+                ship.style.top = "0";
+                ship.style.opacity = 0;
+                shipsContainer.appendChild(ship);
+                ship.style.left = `${Math.random() > 0.5 ? -150 : window.innerWidth + 150}px`; 
+                ship.style.opacity = 1; 
+                ship.style.animation = `moveShip 22s ease-in-out forwards ${i * 2}s`; 
+            }
+            audio.ontimeupdate = function () {
+                if (audio.currentTime >= 22) {
+                    const ships = document.querySelectorAll(".ship");
+                    ships.forEach((ship) => {
+                        ship.style.animationPlayState = 'paused';
+                    });
+                }
+            };
+        }
+
+</script>
 
 </body>
 </html>
