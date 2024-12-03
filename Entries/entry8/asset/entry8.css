@@ -73,8 +73,8 @@
     
 
   .dropbtn {
-    background-color: #000000;
-    color: white;
+    background-color:transparent;
+    color: rgb(0, 0, 0);
     padding: 16px;
     font-size: 14px;
     border: none;
@@ -108,4 +108,4 @@
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #000000;}
+  .dropdown:hover .dropbtn {background-color: transparent;}
