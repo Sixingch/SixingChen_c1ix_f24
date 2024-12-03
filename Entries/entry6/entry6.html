@@ -26,8 +26,8 @@
         that reflect its lively, multicultural atmosphere. You’ll often<br>  
         hear the rhythmic hum of bustling crowds, especially during the<br>  
         evening hours when the streets come alive with people visiting<br>  
-        restaurants, karaoke bars, and shops. The clatter of chopsticks<br>  
-        and sizzling sounds from Korean BBQ restaurants, where meats are<br>  
+        restaurants, karaoke bars, and shops. The clatter of<br>  
+        sizzling sounds from Korean BBQ restaurants, where meats are<br>  
         grilled at the table, adds to the vibrant soundscape.</div> 
 
     <div class="top-nav">
@@ -45,21 +45,53 @@
     </div>
 
 
-        <script>
-            const text = " K-Town in New York City is filled with a diverse array of sounds<br>that reflect its lively, multicultural atmosphere. You’ll often<br>hear the rhythmic hum of bustling crowds, especially during the<br>evening hours when the streets come alive with people visiting<br>restaurants, karaoke bars, and shops. The clatter of chopsticks<br>and sizzling sounds from Korean BBQ restaurants, where meats are<br>grilled at the table, adds to the vibrant soundscape.";
-        let index = 0;
-        const typingSpeed = 100; 
+    <button id="playButton" class="play-button"></button>
+    <audio id="audio" src="asset/ktown.wav" preload="auto"></audio>
+    <div id="waveEffect" class="wave-effect"></div>
 
-        function typeWriter() {
-            if (index < text.length) {
-                document.getElementById("typing-text").innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, typingSpeed);
+
+        <script>
+         const playButton = document.getElementById("playButton");
+        const audio = document.getElementById("audio");
+        const imageContainer = document.getElementById("imageContainer");
+        const waveEffect = document.getElementById("waveEffect");
+        function createFallingImages(imageSource, count) {
+            for (let i = 0; i < count; i++) {
+                const image = document.createElement("img");
+                image.src = imageSource;
+                image.classList.add("falling-image");
+                image.style.left = `${Math.random() * 100}%`; 
+                imageContainer.appendChild(image);
+                setTimeout(() => {
+                    image.style.top = `${Math.random() * 100}%`;
+                    image.style.animation = "fall 4s linear infinite";
+                }, 100);
             }
         }
-        typeWriter();
 
-    
+        playButton.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play(); 
+                waveEffect.style.display = "block"; 
+                waveEffect.classList.add("active"); 
+                imageContainer.innerHTML = ''; 
+                createFallingImages('https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/asset/bbq.png', 100);
+                setTimeout(() => {
+                    imageContainer.innerHTML = ''; 
+                    createFallingImages('https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/asset/kpop.png', 100); 
+                }, 5000); 
+            } else {
+                audio.pause(); 
+                imageContainer.innerHTML = ''; 
+                waveEffect.style.display = "none"; 
+            }
+        });
+        audio.onended = () => {
+            waveEffect.style.display = "none";
+            waveEffect.classList.remove("active"); 
+            imageContainer.innerHTML = ''; 
+        };
+
     </script>
     
 </body>
