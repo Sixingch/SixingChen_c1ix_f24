@@ -203,6 +203,7 @@ body, html {
         height: 50px;
         object-fit: cover;
         animation: fall 4s linear infinite;
+        z-index: 10;
     }
     
     @keyframes fall {
