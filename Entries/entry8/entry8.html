@@ -75,7 +75,7 @@ document.body.addEventListener('click', () => {
                 ship.style.animation = `moveShip 22s ease-in-out forwards ${i * 2}s`; 
             }
             audio.ontimeupdate = function () {
-                if (audio.currentTime >= 22) {
+                if (audio.currentTime >= 25) {
                     const ships = document.querySelectorAll(".ship");
                     ships.forEach((ship) => {
                         ship.style.animationPlayState = 'paused';
