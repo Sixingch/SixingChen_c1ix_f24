@@ -11,6 +11,47 @@
     <h1 class="main-title">2077</h1>
     <img src="asset/build.png" alt="Image at Bottom" class="bottom-image">
 
+    <div class="dropdown">
+        <button class="dropbtn">mune</button>
+            <div class="dropdown-content">
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/index">SOUNDS OF CITY</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry1/entry1.html">MTA</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry2/entry2.html">NYC PARK</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry3/entry3.html">STREET</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry4/entry4.html">TIMESSQUARE</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry5/entry5.html">HARBOR</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry6/entry6.html">K-TOWN</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry7/entry7.html">FLUSHING</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry8/entry8.html">1624</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry9/entry9.html">1929</a>
+              <a href="https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry10/entry10.html">2077</a>
+            </div>
+          </div>
+
+          <div id="carContainer"></div>
+
+          <script>
+            window.onload = () => {
+                const carContainer = document.getElementById("carContainer");
+                for (let i = 0; i < 100; i++) {
+                    const car = document.createElement("img");
+                    car.src = "https://sixingch.github.io/SixingChen_c1ix_f24/Entries/entry10/asset/flycar.png"; 
+                    car.classList.add("car");
+                    carContainer.appendChild(car);
+                }
+                animateCars();
+            };
+    
+            function animateCars() {
+                const cars = document.querySelectorAll(".car");
+                cars.forEach((car, index) => {
+                    const direction = index % 2 === 0 ? 'left-to-right' : 'right-to-left';
+                    const delay = Math.random() * 10 + 's'; 
+                    car.style.animation = `${direction} 10s linear infinite ${delay}`;
+                });
+            }
+        </script>
+
 
 </body>
 </html>
