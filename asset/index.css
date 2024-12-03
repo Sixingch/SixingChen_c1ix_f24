@@ -98,6 +98,10 @@ body {
   font-size: 13px;
 color: #5500ff;}
 
+.color-black{background-color: rgb(255, 255, 255);
+  font-size: 13px;
+color: #000000;}
+
 .circle-link:hover {
   opacity: 1;
    
